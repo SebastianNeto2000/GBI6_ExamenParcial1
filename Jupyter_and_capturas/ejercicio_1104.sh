@@ -1,12 +1,17 @@
 ###################################################
 # Exercise 1.10.4 on Buzzard et al. (2016)
 ###################################################
-# 1)  Write a script that, for a given csv file and
-# column number, prints:
-# - Column name
-# - Number of distinct values
-# - Minimum value
-# - Maximum value
+#Buzzard et al. (2016) recolectaron datos sobre el crecimiento de un bosque
+#en Costa Rica. En el archivo Buzzard2015_data.csv encontrará un subconjunto
+#de sus datos, incluida información taxonómica, abundancia y biomasa de árboles.
+###################################################
+# 1. Escriba un script para el archivo CSV que escoja
+#un número de columna determinado, imprima:
+
+# - el nombre de la columna correspondiente;
+# - el número de valores distintos en la columna;
+# - el valor mínimo;
+# - el valor máximo.
 
 # First, we need to extract the column name.
 # For example, for the Buzzard data file, and col 7
@@ -36,32 +41,3 @@ cut -d ',' -f 7 ./Buzzard2015_data.csv | tail -n +2 | sort -n | head -n 1
 cut -d ',' -f 7 ./Buzzard2015_data.csv | tail -n +2 | sort -n | tail -n 1
 
 # 14897.29471
-
-# The file explore.sh is possible incarnation
-# of the script.
-
-# For example:
-
-bash explore.sh ./Buzzard2015_data.csv 6
-
-# Column name
-# Abund.n
-# Number of distinct values:
-# 46
-# Minimum value:
-# 1
-# Maximum value:
-# 157
-
-# This works well also for alphabetical order:
-
-bash explore.sh ./Buzzard2015_data.csv 3
-
-# Column name
-# genus
-# Number of distinct values:
-# 85
-# Minimum value:
-# Acacia
-# Maximum value:
-# Zanthoxylum
