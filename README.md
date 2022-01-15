@@ -12,4 +12,12 @@
 * Git Bush
 * Anaconda (Jupyter notebook)
 * Git Hub Desktop
-## Explicación de la data utilizada:
+## Data utilizada:
+* Se usó la data Buzzard2015_data.csv para la pregunta 4
+* Se usó la data Gesquiere2011_data.csv para la pregunta 5
+* Se usó la data 10080Table1.xls sobre estudio de mamíferos para la pregunta 6
+* Se usó la tabla del link http://www.russelllab.org/aas/aas.html para la pregunta 7
+## Resolucones:
+* Libro de Jupyter contiene código de todas las preguntas 
+* script 1102, para pregunta 4
+* script 1104, para pregunta 5
