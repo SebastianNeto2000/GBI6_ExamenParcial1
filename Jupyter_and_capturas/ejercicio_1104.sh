@@ -11,7 +11,7 @@
 # First, we need to extract the column name.
 # For example, for the Buzzard data file, and col 7
 
-cut -d ',' -f 7 ../data/Buzzard2015_data.csv | head -n 1
+cut -d ',' -f 7 ./Buzzard2015_data.csv | head -n 1
 
 # biomass
 
@@ -19,7 +19,7 @@ cut -d ',' -f 7 ../data/Buzzard2015_data.csv | head -n 1
 # distinct values. We can sort the results
 # (after removing the header), and use uniq
 
-cut -d ',' -f 7 ../data/Buzzard2015_data.csv | tail -n +2 | sort | uniq | wc -l
+cut -d ',' -f 7 ./Buzzard2015_data.csv | tail -n +2 | sort | uniq | wc -l
 
 # 285
 
@@ -28,12 +28,12 @@ cut -d ',' -f 7 ../data/Buzzard2015_data.csv | tail -n +2 | sort | uniq | wc -l
 # head (for min) or tail (for max) the result.
 
 # Minimum
-cut -d ',' -f 7 ../data/Buzzard2015_data.csv | tail -n +2 | sort -n | head -n 1
+cut -d ',' -f 7 ./Buzzard2015_data.csv | tail -n +2 | sort -n | head -n 1
 
 # 1.048466198
 
 # Maximum
-cut -d ',' -f 7 ../data/Buzzard2015_data.csv | tail -n +2 | sort -n | tail -n 1
+cut -d ',' -f 7 ./Buzzard2015_data.csv | tail -n +2 | sort -n | tail -n 1
 
 # 14897.29471
 
@@ -42,7 +42,7 @@ cut -d ',' -f 7 ../data/Buzzard2015_data.csv | tail -n +2 | sort -n | tail -n 1
 
 # For example:
 
-bash explore.sh ../data/Buzzard2015_data.csv 6
+bash explore.sh ./Buzzard2015_data.csv 6
 
 # Column name
 # Abund.n
@@ -55,7 +55,7 @@ bash explore.sh ../data/Buzzard2015_data.csv 6
 
 # This works well also for alphabetical order:
 
-bash explore.sh ../data/Buzzard2015_data.csv 3
+bash explore.sh ./Buzzard2015_data.csv 3
 
 # Column name
 # genus

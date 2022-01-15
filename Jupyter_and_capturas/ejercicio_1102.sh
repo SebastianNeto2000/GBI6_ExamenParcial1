@@ -1,12 +1,11 @@
 ###################################################
 # Exercise 1.10.2 on Gesquiere et al. (2011)
 ###################################################
-# 1) How many times were the levels of individuals
-# 3 and 27 recorded?
+# 1) Cuántas veces fueron  muestreados los niveles en los individuos 3 y 27
 
-# First, let's see the structure of the file:
+# Primero, veamos la estructura del archivo:
 
-head -n 3 ../data/Gesquiere2011_data.csv 
+head -n 3 ./Gesquiere2011_data.csv 
 
 # maleID	GC	T
 # 1	66.9	64.57
@@ -17,7 +16,7 @@ head -n 3 ../data/Gesquiere2011_data.csv
 
 # To extract only the first column, we can use cut
 
-cut -f 1 ../data/Gesquiere2011_data.csv | head -n 3
+cut -f 1 ./Gesquiere2011_data.csv | head -n 3
 
 # maleID
 # 1
@@ -29,13 +28,13 @@ cut -f 1 ../data/Gesquiere2011_data.csv | head -n 3
 
 # maleID 3
 
-cut -f 1 ../data/Gesquiere2011_data.csv | grep -c -w 3
+cut -f 1 ./Gesquiere2011_data.csv | grep -c -w 3
 
 # 61
 
 # maleID 27
 
-cut -f 1 ../data/Gesquiere2011_data.csv | grep -c -w 27
+cut -f 1 ./Gesquiere2011_data.csv | grep -c -w 27
 
 # 5
 
@@ -50,7 +49,7 @@ cut -f 1 ../data/Gesquiere2011_data.csv | grep -c -w 27
 
 # The script count_baboons.sh shows the solution
 
-bash count_baboons.sh ../data/Gesquiere2011_data.csv 27
+bash count_baboons.sh ./Gesquiere2011_data.csv 27
 
 # 5
 
@@ -66,7 +65,7 @@ bash count_baboons.sh ../data/Gesquiere2011_data.csv 27
 # the IDs, and then run through sort | uniq to
 # remove the duplicates:
 
-tail -n +2 ../data/Gesquiere2011_data.csv | cut -f 1 | sort -n | uniq
+tail -n +2 ./Gesquiere2011_data.csv | cut -f 1 | sort -n | uniq
 
 # 1
 # 2
@@ -76,14 +75,14 @@ tail -n +2 ../data/Gesquiere2011_data.csv | cut -f 1 | sort -n | uniq
 
 # To store this list in a script, you can use
 
-myIDS=`tail -n +2 ../data/Gesquiere2011_data.csv | cut -f 1 | sort -n | uniq`
+myIDS=`tail -n +2 ./Gesquiere2011_data.csv | cut -f 1 | sort -n | uniq`
 
 # And now use a "loop" to cycle through all
 # IDs:
 
 for id in $myIDS
 do
-    mycounts=`bash count_baboons.sh ../data/Gesquiere2011_data.csv $id`
+    mycounts=`bash count_baboons.sh Gesquiere2011_data.csv $id`
     echo "ID:" $id "counts:" $mycounts
 done 
 
