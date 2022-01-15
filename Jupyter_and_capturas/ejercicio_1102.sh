@@ -49,7 +49,7 @@ cut -f 1 ./Gesquiere2011_data.csv | grep -c -w 27
 
 # The script count_baboons.sh shows the solution
 
-bash count_baboons.sh ./Gesquiere2011_data.csv 27
+cut -f 1 ./Gesquiere2011_data.csv | grep -c -w 105
 
 # 5
 
